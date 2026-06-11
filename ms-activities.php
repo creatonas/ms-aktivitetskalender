@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Aktivitetskalender
- * Description: v4.7 - Full clean (stabil + styling + ajax + nav fix)
+ * Description: Messe administrasjons løsning
  * Version: 4.7
  * Author: Creato Design AS
  */
