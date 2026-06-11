@@ -162,8 +162,25 @@ $date=$y.'-'.str_pad($m,2,'0',STR_PAD_LEFT).'-'.str_pad($d,2,'0',STR_PAD_LEFT);
 $class='ms-day';
 if($date==date('Y-m-d')) $class.=' today';
 
-echo '<div class="'.$class.'"><strong>'.$d.'</strong>';
+$link_for_day = '';
 
+if(isset($events[$date])){
+    foreach($events[$date] as $e){
+        if(!empty($e['link'])){
+            $link_for_day = $e['link'];
+            break;
+        }
+    }
+}
+
+if($link_for_day){
+    echo '<div class="'.$class.'" onclick="window.location.href=\''.esc_url($link_for_day).'\'" style="cursor:pointer;">';
+} else {
+    echo '<div class="'.$class.'">';
+}
+
+echo '<strong>'.$d.'</strong>';
+    
 if(isset($events[$date])){
 foreach($events[$date] as $e){
 $label=esc_html($e['title']);
