@@ -1,0 +1,163 @@
+/* Aktivitetskalender Plugin - Main Styles */
+
+/* Day hover effect */
+.ms-day[onclick]:hover {
+    background: #f3f4f6;
+}
+
+/* TABLE STYLES */
+.ms-table th,
+.ms-table td {
+    text-align: left !important;
+}
+
+.ms-table thead {
+    background: #181e36;
+    color: #fff;
+}
+
+.ms-table tbody tr:hover {
+    background: rgba(24, 30, 54, 0.1);
+}
+
+/* STATUS INDICATOR */
+.ms-status {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.ms-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.ms-dot.ledig {
+    background: #1a7f37;
+}
+
+.ms-dot.fullt {
+    background: #c62828;
+}
+
+.ms-dot.lukket {
+    background: #b78103;
+}
+
+/* LINK ICON */
+.ms-link-icon {
+    font-size: 12px;
+    margin-left: 4px;
+    opacity: 0.7;
+}
+
+/* CALENDAR GRID */
+.ms-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.ms-calendar-head {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.ms-day {
+    border: 1px solid #e5e7eb;
+    min-height: 110px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.ms-day:hover {
+    background: #f3f4f6;
+}
+
+.ms-day.today {
+    border: 2px solid #a38b6b;
+}
+
+/* CALENDAR NAVIGATION */
+.ms-calendar-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin: 20px 0 10px;
+}
+
+.ms-nav-left {
+    text-align: left;
+}
+
+.ms-nav-center {
+    text-align: center;
+    font-weight: 600;
+}
+
+.ms-nav-right {
+    text-align: right;
+}
+
+/* BUTTON STYLES */
+.grve-btn.grve-bg-primary-2 {
+    background: #181e36 !important;
+    border-color: #181e36 !important;
+}
+
+.grve-btn.grve-bg-primary-2:hover {
+    background: #a18c6f !important;
+    border-color: #a18c6f !important;
+}
+
+.ms-active {
+    background: #a18c6f !important;
+    border-color: #a18c6f !important;
+}
+
+/* DATE ICON */
+.ms-date-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.ms-table th:first-child,
+.ms-table td:first-child {
+    width: 180px;
+    white-space: nowrap;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .ms-table thead {
+        display: none;
+    }
+    
+    .ms-table tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #eee;
+        padding: 10px;
+        border-radius: 6px;
+    }
+    
+    .ms-table td {
+        display: block;
+    }
+    
+    .ms-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 3px;
+    }
+}
