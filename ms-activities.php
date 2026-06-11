@@ -44,6 +44,10 @@ add_action('acf/init', function() {
 add_action('wp_head', function(){
 echo '<style>
 
+.ms-day[onclick]:hover {
+    background: #f3f4f6;
+}
+
 /* TABLE */
 .ms-table th,.ms-table td{ text-align:left !important; }
 .ms-table thead{background:#181e36;color:#fff;}
