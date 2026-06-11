@@ -93,6 +93,23 @@ echo '<style>
 .ms-table td:before{content:attr(data-label);font-weight:bold;display:block;margin-bottom:3px;}
 }
 
+.ms-day:hover {
+    background: #f3f4f6;
+    transition: background 0.2s ease;
+}
+
+.ms-date-icon {
+    display:inline-flex;
+    align-items:center;
+    margin-right:15px;
+    font-size:16px;
+}
+
+.ms-table th:first-child,
+.ms-table td:first-child {
+    width: 180px;
+    white-space: nowrap;
+}
 </style>';
 });
 
@@ -232,7 +249,12 @@ $title='<a href="'.esc_url($link).'">'.$title.' <span class="ms-link-icon">ðŸ�
 }
 
 echo '<tr>';
-echo '<td data-label="Dato">ðŸ“… '.ms_date($from,$to).'</td>';
+echo '<td data-label="Dato">
+<span class="ms-date-icon grve-text-primary-2">
+<span class="grve-icon et-icon-calendar"></span>
+</span>
+'.ms_date($from,$to).'
+</td>';
 echo '<td data-label="Aktivitet">'.$title.'</td>';
 echo '<td data-label="Status"><span class="ms-status '.$status.'"><span class="ms-dot '.$status.'"></span>'.$status.'</span></td>';
 echo '</tr>';
