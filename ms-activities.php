@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Aktivitetskalender
- * Description: Messe administrasjons løsning
+ * Description: Aktivitetskalender med liste og måneds oversikt og shortcodes
  * Version: 4.7
  * Author: Creato Design AS
  */
