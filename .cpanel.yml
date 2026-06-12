@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/DITT_BRUKERNAVN/public_html/wp-content/plugins/DIN_PLUGIN_MAPPE/
+    - /bin/cp -R * $DEPLOYPATH
