@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/DITT_BRUKERNAVN/public_html/wp-content/plugins/DIN_PLUGIN_MAPPE/
+    - export DEPLOYPATH=/home/mssunhordland/repositories/ms-aktivitetskalender
     - /bin/cp -R * $DEPLOYPATH
