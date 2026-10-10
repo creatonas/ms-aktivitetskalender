@@ -1,0 +1,17 @@
+
+
+# Local configuration, generated packages and private data
+.DS_Store
+__MACOSX/
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+/dist/
+/backups/
+*.sql
+wp-config.php
+node_modules/
