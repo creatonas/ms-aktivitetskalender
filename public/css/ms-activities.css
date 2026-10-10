@@ -1,0 +1,96 @@
+.ms-activities,
+.ms-modal {
+	--ms-primary: #181e36;
+	--ms-accent: #a18c6f;
+	--ms-border: #e5e7eb;
+}
+
+.ms-table { width: 100%; border-collapse: collapse; }
+.ms-table th, .ms-table td { text-align: left !important; }
+.ms-table thead { background: var(--ms-primary); color: #fff; }
+.ms-table tbody tr:hover { background: rgba(24, 30, 54, 0.1); }
+.ms-table th:first-child, .ms-table td:first-child { width: 180px; white-space: nowrap; }
+.ms-date-icon { display: inline-flex; align-items: center; margin-right: 15px; font-size: 16px; }
+
+.ms-status { display: inline-flex; gap: 6px; align-items: center; }
+.ms-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
+.ms-dot--ledig { background: #1a7f37; }
+.ms-dot--fullt { background: #c62828; }
+.ms-dot--lukket { background: var(--ms-accent); }
+
+.ms-link-icon { margin-left: 4px; font-size: 12px; opacity: 0.7; }
+.ms-modal-link { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: none; cursor: pointer; }
+.ms-modal-link:hover, .ms-modal-link:focus-visible { color: var(--ms-accent); }
+.ms-modal-link-label { text-decoration: underline; }
+.ms-info-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	margin-left: 6px;
+	border: 0 !important;
+	border-radius: 50%;
+	background: #181e36 !important;
+	box-shadow: none !important;
+	color: #fff !important;
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 1;
+	text-decoration: none !important;
+	vertical-align: middle;
+}
+.ms-hidden-info[hidden] { display: none !important; }
+
+body.ms-modal-open { overflow: hidden; }
+.ms-modal { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, 0.6); }
+.ms-modal[hidden] { display: none !important; }
+.ms-modal-content { width: min(90%, 700px); max-height: 85vh; overflow: auto; background: #fff; border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25); }
+.ms-modal-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border-bottom: 1px solid var(--ms-border); background: var(--ms-primary); }
+.ms-modal-title { margin: 0; color: #fff; font-size: 32px; }
+.ms-modal-date { color: var(--ms-accent); }
+.ms-modal-close { padding: 0; border: 0; background: transparent; color: var(--ms-accent); font-size: 28px; line-height: 1; cursor: pointer; }
+.ms-modal-body { padding: 24px; }
+.ms-modal-body > :first-child { margin-top: 0; }
+.ms-modal-body > :last-child { margin-bottom: 0; }
+.ms-modal-actions { margin-top: 28px; }
+.ms-modal-action { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border: 1px solid var(--ms-primary); border-radius: 4px; background: var(--ms-primary); color: #fff !important; font-weight: 600; line-height: 1.2; text-decoration: none !important; transition: background 0.2s ease, border-color 0.2s ease; }
+.ms-modal-action:hover, .ms-modal-action:focus-visible { border-color: var(--ms-accent); background: var(--ms-accent); color: #fff !important; }
+
+.ms-calendar-scroll { overflow-x: auto; }
+.ms-calendar, .ms-calendar-head { display: grid; grid-template-columns: repeat(7, minmax(90px, 1fr)); gap: 10px; min-width: 690px; }
+.ms-calendar-head { margin-top: 10px; font-weight: 600; }
+.ms-day { min-height: 110px; padding: 10px; border: 1px solid var(--ms-border); border-radius: 6px; background: #fff; }
+.ms-day:not(.ms-day--empty):hover { background: #f3f4f6; transition: background 0.2s ease; }
+.ms-day--today { border: 2px solid var(--ms-accent); }
+.ms-day-events { display: grid; gap: 6px; margin-top: 8px; }
+.ms-day .ms-status { align-items: flex-start; font-size: 14px; line-height: 1.2; }
+.ms-day .ms-dot { margin-top: 0.3em; }
+.ms-calendar-nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 20px 0 10px; }
+.ms-nav-left { text-align: left; }
+.ms-nav-center { font-weight: 600; text-align: center; }
+.ms-nav-right { text-align: right; }
+.ms-toggle-buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+.ms-toggle [hidden] { display: none !important; }
+
+.ms-activities .grve-btn.grve-bg-primary-2 { background: var(--ms-primary) !important; border-color: var(--ms-primary) !important; }
+.ms-activities .grve-btn.grve-bg-primary-2:hover,
+.ms-activities .grve-btn.grve-bg-primary-2:focus-visible,
+.ms-activities .grve-btn.ms-active { background: var(--ms-accent) !important; border-color: var(--ms-accent) !important; }
+.ms-calendar-error { padding: 10px; border-left: 4px solid #c62828; background: #fff3f3; }
+
+@media (max-width: 768px) {
+	.ms-table, .ms-table tbody, .ms-table tr, .ms-table td { border-collapse: separate !important; border-spacing: 0 !important; }
+	.ms-table thead { display: none; }
+	.ms-table tr { display: block; margin-bottom: 14px; padding: 20px; border: 1px solid var(--ms-border) !important; border-radius: 8px; background: #fff; box-shadow: none !important; }
+	.ms-table td { display: block; margin-left: 0 !important; padding: 0 0 16px !important; border: 0 !important; outline: 0 !important; box-shadow: none !important; font-size: 15px; line-height: 1.4; text-align: left !important; }
+	.ms-table td:last-child { padding-bottom: 0 !important; }
+	.ms-table td[data-label="Dato"] { font-weight: 600; }
+	.ms-table td[data-label="Aktivitet"], .ms-modal-link { font-size: 16px; }
+	.ms-table td[data-label="Dato"] .ms-date-icon { display: none !important; }
+	.ms-modal-content { width: 95%; max-height: 86vh; }
+	.ms-modal-header, .ms-modal-body { padding: 18px; }
+	.ms-modal-title { font-size: 26px; }
+}

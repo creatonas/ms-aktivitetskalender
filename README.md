@@ -1,70 +1,43 @@
-# Aktivitetskalender Plugin
+# Aktivitetskalender
 
-A modular WordPress plugin for managing and displaying activities with calendar and list views.
+WordPress-plugin for aktiviteter med liste, månedsoversikt og kombinert visning. Advanced Custom Fields brukes til redigering av aktivitetsdata.
 
-## Features
+## Endringer i 5.3.2
 
-- 📅 Interactive calendar view with month navigation
-- 📋 List view of all activities
-- 🔀 Toggle between calendar and list views
-- 🎨 Responsive design
-- 🏷️ Activity status indicators (Ledig, Fullt, Lukket)
-- 🔗 Direct links to activities
-- 📱 Mobile-friendly
+- Infoikonet rendres som et eksplisitt HTML-element med fast størrelse, mørk bakgrunn og hvitt symbol.
+- Ikonet er ikke lenger avhengig av temaets font eller pseudo-element-rendering.
 
-## Project Structure
+## Endringer i 5.3.1
 
-```
-ms-aktivitetskalender/
-├── ms-aktivitetskalender.php     # Main plugin file
-├── includes/
-│   ├── cpt.php                   # Custom Post Type
-│   ├── acf.php                   # ACF Field Groups
-│   ├── helpers.php               # Utility functions
-│   ├── calendar.php              # Calendar rendering logic
-│   └── shortcodes.php            # Shortcode definitions
-├── assets/
-│   ├── css/
-│   │   └── style.css             # Plugin styles
-│   └── js/
-│       └── calendar.js           # Plugin JavaScript
-└── README.md
-```
+- Infoikonet har fylt mørk bakgrunn og hvitt symbol.
+- Ressursversjonen er oppdatert slik at nettlesere og mellomlagring henter den nye CSS-filen.
 
-## Installation
+## Shortcodes
 
-1. Upload the `ms-aktivitetskalender` folder to `/wp-content/plugins/`
-2. Activate the plugin in WordPress admin
-3. Ensure ACF Pro is installed for field groups
+- `[ms_activities]` viser kommende aktiviteter som liste.
+- `[ms_calendar]` viser aktiviteter i en månedsoversikt.
+- `[ms_activities_toggle]` viser en tilgjengelig bryter mellom liste og måned.
 
-## Usage
+## Oppgradering fra 5.2
 
-### Shortcodes
+Versjon 5.3 beholder posttypen `aktiviteter`, alle shortcode-navn og ACF-feltene `date_from`, `date_to`, `status`, `link` og `activity_info`. Ingen datamigrering er nødvendig.
 
-**Calendar View:**
-```
-[ms_calendar]
-```
+## Endringer i 5.3
 
-**List View:**
-```
-[ms_activities]
-```
+- CSS og JavaScript er flyttet til egne, betinget lastede filer.
+- AJAX-parametere valideres og begrenses.
+- Ugyldige datoer og statuser håndteres kontrollert.
+- Kalenderen henter bare aktiviteter som kan overlappe valgt måned.
+- Modal, kalendernavigasjon og visningsbryter har forbedret tastatur- og skjermleserstøtte.
+- Frontend kan lese lagrede felt uten fatal feil dersom ACF midlertidig mangler.
+- Arrangementlenken vises som knapp i modalvinduet.
 
-**Toggle View (List + Calendar with switcher):**
-```
-[ms_activities_toggle]
-```
+Aktivitetspostene slettes ikke ved deaktivering eller avinstallering.
 
-## Dependencies
+## Repository-struktur
 
-- WordPress 5.0+
-- Advanced Custom Fields (ACF) Pro
+`ms-activities.php` laster modulene i `includes/` og ressursene i `public/`. Kildeversjon er 5.3.2. Den tidligere rot-ZIP-en 5.3 er fjernet fordi den ikke samsvarer med kilden. Pakk runtime-filene med `ms-activities/` som toppmappe.
 
-## Version
+GitHub Actions kontrollerer PHP/JavaScript-syntaks. WordPress/ACF, tema, tastaturbruk og flere kalendere på samme side krever integrasjonstest. Dette er kildekodevedlikehold, ikke en stabil release eller produksjonsdeploy.
 
-5.0 - Modular structure with separate assets and CSS
-
-## Author
-
-Creato Design AS
+`.cpanel.yml` definerer serverkopiering. Avklar trigger, gren og destinasjon før merge/deploy.
